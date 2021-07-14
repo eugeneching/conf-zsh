@@ -40,7 +40,7 @@ if ! zgen saved; then
 fi
 
 # Functions.
-fl () { open -a "Forklift.app" $1; }
+f () { open -a "Forklift.app" $1; }
 
 # Aliases.
 alias c='code'
