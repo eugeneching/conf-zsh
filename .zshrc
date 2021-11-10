@@ -24,6 +24,9 @@ setopt interactivecomments
 unsetopt correct
 unsetopt auto_name_dirs
 
+# Theme preferences.
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
 # Zgen.
 source "${HOME}/.zgen/zgen.zsh"
 if ! zgen saved; then
@@ -31,10 +34,10 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/git
   zgen oh-my-zsh plugins/docker
   zgen oh-my-zsh plugins/docker-compose
-  zgen load zsh-users/zsh-autosuggestions
   zgen load zsh-users/zsh-history-substring-search
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-completions src
+  zgen load romkatv/powerlevel10k
   zgen load agkozak/zsh-z
   zgen save
 fi
@@ -45,13 +48,13 @@ f () { open -a "Forklift.app" $1; }
 # Aliases.
 alias c='code'
 alias d='docker'
-alias r='ranger'
 alias rgg='rg --files | rg -S $1'
-alias ls='exa'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias ls='exa'
 
+zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 zstyle ':completion:*' matcher-list '' 'm:{a-z\-}={A-Z\_}' 'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' 'r:|?=** m:{a-z\-}={A-Z\_}'
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
