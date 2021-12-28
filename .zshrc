@@ -24,9 +24,6 @@ setopt interactivecomments
 unsetopt correct
 unsetopt auto_name_dirs
 
-# Theme preferences.
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
 # Zgen.
 source "${HOME}/.zgen/zgen.zsh"
 if ! zgen saved; then
@@ -60,3 +57,5 @@ zstyle ':completion:*' matcher-list '' 'm:{a-z\-}={A-Z\_}' 'r:[^[:alpha:]]||[[:a
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
